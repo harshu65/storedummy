@@ -1,3 +1,6 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -11,3 +14,220 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+/* .header a{padding: 0rem 0.5rem;} */
+.navb a:hover{color: white;}
+/*Carousel */
+/* Slideshow container */
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+}
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+/* Caption text */
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+  .prev, .next,.text {font-size: 11px}
+}
+/*footer*/
+.site-footer .social-icons a
+{
+  width:40px;
+  height:40px;
+  line-height:40px;
+  margin-left:6px;
+  margin-right:0;
+  border-radius:100%;
+  background-color:#33353d
+}
+.copyright-text
+{
+  margin:0
+}
+.social-icons li{display: inline;padding: 0rem 0.5rem;}
+.fa {
+  padding: 7px;
+  font-size: 25px;
+  width: 40px;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 1.2rem;
+}
+.prodslide{
+  overflow-y: hidden;
+  white-space: nowrap;}
+.prodslides{
+  /* Existing styles here */
+  scroll-snap-type: x mandatory;
+}
+.prodcard{height: 20rem;display: inline-block; display: inline-block;}
+#root > div > div.prodslide::-webkit-scrollbar-thumb {border: 5px solid white;background:#F7B79D;border-radius: 40px;}
+#root > div > div.prodslide::-webkit-scrollbar-track{background: white;margin: 2em;border-radius: 40px;}
+#root > div > div.prodslide::-webkit-scrollbar {
+  display: none;
+}
+.left, .right{ position: absolute;transform: translateY(-50%);
+font-size: 3rem;color: white;top: 32%;}
+.left {
+  left: 0;
+  
+}
+.right {
+  right: 0;
+}
+.carousel .slide {
+  height: 22rem!important;
+  min-width: 100%;
+  margin: 0;
+  width: 30rem!important;
+  position: relative;
+  text-align: center;
+}
+.carousel .slide img {
+  width: 100%;
+  vertical-align: top;
+  border: 0;
+  height: 20rem!important;
+}
+.carousel .slider {
+  margin: 0;
+  padding: 0;
+  position: relative;
+  list-style: none;
+  width: 32rem!important;
+}
+.legend{font-size: 0.9rem!important;}
+#root > div > div.carousel-root > div:nth-child(2) > div > ul{display:none;}
+.carousel-status{display:none;}
+.carousel .control-dots .dot {
+  background: rgb(99, 102, 241)!important;
+  border-radius: 0px!important;
+  width: 24px!important;
+  height: 4px!important;}
+  .dot{border-radius: 0px!important;}
+  .carousel .control-dots {
+    margin: 0px!important ;display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;}
+/* single product page thumbnail image container */
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+.imgf{animation: fadeIn 2s;}
+
+  .carouselsinp{display: none;}
+  main.grow{padding:0rem 12rem;}
+  /*404 page*/
+  .page_404{height: 430px;margin-bottom: auto;}
+  .gthome{margin: 1.2rem 0rem;}
+  .p404{font-size: 6.25rem;}
+  /*--------scroll bar*/
+ /* width */
+::-webkit-scrollbar {
+  width: 0.3rem;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: black;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background:rgb(99, 102, 241); 
+  border-radius: 0.5rem;
+}
+html{scroll-behavior: smooth;}
+
+/*cart page*/
+.totalp{margin: 1rem 8rem;}
+.fa-archive{padding-left: 0rem;}
+.fa-shopping-cart{padding: 0rem;}
+.heading{font-family:Verdana, Geneva, Tahoma, sans-serif}
+.ptitle{font-family: Helvetica}
+
+/*cat scroll*/
+.catscroll::-webkit-scrollbar-thumb{background:rgb(255, 255, 255); }
+.catscroll::-webkit-scrollbar-thumb{
+cursor: pointer!important;}
+.catscroll::-webkit-scrollbar {
+  width: 0.3rem;height: 0.2rem;
+}
+
+/* .catbtn{height: 2.2rem;} */
+/*related prod sec */
+.relsec::-webkit-scrollbar-thumb{background:rgb(255, 255, 255); }
+.relsec::-webkit-scrollbar {
+  width: 0.3rem;height: 0.2rem;
+}
+/*pagination */
+ul.pagination li.active{background-color:#424242}
+ul.pagination li.page-item{cursor: pointer;}
+@media screen and (max-width:425px) {
+  .grid{grid-template-columns: repeat(1, minmax(0, 1fr));
+}}
+@media screen and (min-width:425px) {
+  #root > div > section > div > div > div.pthumb{padding-right: 0px;padding-left: 0px;}}
