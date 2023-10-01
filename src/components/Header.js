@@ -26,11 +26,11 @@ function mobnav(){
           <Link to="/About">About</Link>
           <Link to="/Contact">Contact</Link>
           <div className='float-right '>
-            <Link to="/Cart" className='text-xl'><i class="fa fa-shopping-cart" aria-hidden="true"></i>{Globalstate.state.length}
+            <Link to="/Cart" className='text-xl'><i className="fa fa-shopping-cart" aria-hidden="true"></i>{Globalstate.state.length}
             </Link>
           </div>
         </div>
-        <span onClick={()=>mobnav()} className='float-right hidden'><i class="fa fa-bars" aria-hidden="true"></i></span>
+        <span onClick={()=>mobnav()} className='float-right hidden'><i className="fa fa-bars" aria-hidden="true"></i></span>
       </nav>
       <div id="mobid"className='mobnav hidden text-indigo-500'>
           <Link to="/" className='block'>Home</Link>

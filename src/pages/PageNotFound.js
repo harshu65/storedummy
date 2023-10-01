@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 const PageNotFound = () => {
   return (
     <>
-    <section class="page_404 text-slate-500 py-10">
+    <section className="page_404 text-slate-500 py-10">
 		<h2 className='text-4xl p404'>404</h2>
         <div className='py-20'>
 		<p className='capitalize text-2xl gthome'>the page you are looking for is not available!</p>
