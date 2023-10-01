@@ -25,7 +25,7 @@ function App() {
     <>
 
       <div className="App">
-        <HashRouter basename='/'>
+        <BrowserRouter>
           <Header />
           <Routes>
             <Route path="/" element={<Suspense fallback={<Loading />}>
@@ -42,7 +42,7 @@ function App() {
             <Route path="*" element={<Navigate to="/404" />} />
           </Routes>
           <Footer />
-        </HashRouter>
+        </BrowserRouter>
       </div>
     </>
   );
