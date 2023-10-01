@@ -63,10 +63,10 @@ export const Products = () => {
           return (
             <>
               <div className="relative  flex w-full max-w-xs flex-col overflow-hidden rounded-lg border border-gray-100 bg-white shadow-md" key={item.id}>
-                <a className="relative flex h-52 overflow-hidden justify-center" href={`/products/${item.id}`}>
+                <Link className="relative flex h-52 overflow-hidden justify-center" to={`/products/${item.id}`}>
                   <img className="contain" src={item.thumbnail} alt={item.title} />
                   <span className="absolute top-0 right-0 m-2 rounded-full bg-black px-2 text-center text-sm font-medium text-white">{item.discountPercentage}% OFF</span>
-                </a>
+                </Link>
                 <div className="mt-4 px-5 pb-2">
                   <Link to={`/products/${item.id}`}>
                     <h5 className=" text-xl heading ptitle text-left tracking-tight text-slate-900">{item.title} </h5>
