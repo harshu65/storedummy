@@ -8,7 +8,7 @@ import Product from './pages/Product';
 import { Loading } from './components/Loading.js';
 import { Navigate } from 'react-router-dom';
 import PageNotFound from './pages/PageNotFound';
-import { Route, Routes, BrowserRouter,HashRouter } from 'react-router-dom';
+import { Route, Routes, BrowserRouter, HashRouter } from 'react-router-dom';
 import Cart from './pages/Cart';
 import Categories from './components/Categories';
 
@@ -23,9 +23,9 @@ const Home = lazy(() => delayy(import('./pages/Home')));
 function App() {
   return (
     <>
-    <HashRouter basename='/'>
+
       <div className="App">
-        
+        <HashRouter basename='/'>
           <Header />
           <Routes>
             <Route path="/" element={<Suspense fallback={<Loading />}>
@@ -42,9 +42,8 @@ function App() {
             <Route path="*" element={<Navigate to="/404" />} />
           </Routes>
           <Footer />
-        
+        </HashRouter>
       </div>
-      </HashRouter>
     </>
   );
 }
