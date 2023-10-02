@@ -50,16 +50,17 @@ const Product = () => {
         <div className="m-4 mx-auto max-w-screen-lg rounded-md border border-gray-100 text-neutral-200 shadow-md">
           <div className="relative flex h-full flex-col  md:flex-row">
             <div className="relative p-8 md:w-4/6">
-              <div className="flex flex-col md:flex-row">
-                <h2 className="mb-2 text-left text-2xl font-black capitalize">{data.title}</h2>
-                <span className="ml-2 px-2 border-t-2 rounded-b text-xs uppercase bg-indigo-800 w-50">{data.category}</span>
+              <div className="lg:flex flex-col md:flex-row">
+                <h2 className="mb-2 mr-2 text-left text-2xl font-black capitalize">{data.title}</h2>
+                <span className="inline  px-2 border-t-2 rounded-b text-xs uppercase bg-indigo-800 w-50 float-left">{data.category}</span>
               </div>
-              <p className="mt-3 font-sans text-left text-base tracking-normal">{data.description}</p>
-              <div className="flex flex-col md:flex-row md:items-end">
-                <p className="mt-6 text-4xl font-black">₹{data.price}<sup className="align-super text-sm">00</sup></p>
+              <br/>
+              <p className=" font-sans text-left text-base tracking-normal">{data.description}</p>
+              <div className="mt-4 lg:mt-0 lg:flex flex-col md:flex-row md:items-end">
+                <p className="inline mt-6 text-4xl font-black">₹{data.price}<sub className="align-super text-sm">00</sub></p>
                 <span className="ml-2 text-xs uppercase text-lime-400">{data.stock} In stock</span>
               </div>
-              <div className="mt-8 flex flex-col sm:flex-row">
+              <div className="mt-8 justify-center md:justify-start flex flex-col sm:flex-row">
                 <button className="mr-2 mb-4 flex cursor-pointer items-center justify-center rounded-md bg-emerald-400 py-2 px-8 text-center text-white transition duration-150 ease-in-out hover:translate-y-1 hover:bg-emerald-500"
                   onClick={() => { dispatch({ type: "ADD", payload: data }); handclick() }} >
                   <svg xmlns="http://www.w3.org/2000/svg" className="mr-2 h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">

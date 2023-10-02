@@ -27,30 +27,14 @@ const Home = () => {
   return (
     <>
       <Carouselcom dp={data}/>
-      {/* <div className='prodslide'>
-      <button className="left" onClick={leftScroll}>
-      ↶
-      </button>
-      <div className='prodslides'>
-      {data.map((dd) => (
-         <Link to={`/products/${dd.id}`}>
-        <div className='prodcard px-1 '>
-          <img className='h-64 border-1 rounded-b-xl' src={dd.thumbnail} alt={dd.title}/>
-          <p className='text-white'>{dd.title}</p>
-        </div>
-        </Link>
-      ))}
-      </div>
-      <button className="right" onClick={rightScroll}>
-      ↷
-      </button>
-      </div> */}
       
       <h1 className='text-slate-300 text-4xl font-sans  capitalize font-bold tracking-tight'>Featured Product</h1>
       <Suspense fallback={<Loading/>}>
       <div className='grid mt-10 lg:grid-cols-4 sm:grid-cols-3 grid-cols-2 justify-items-center gap-4 mx-5'>
-        {data.map((item,index) => (
-          
+        {data.map((item,index) => {
+          item.quantity = 1;
+          return (
+            <>
             <div className="relative  flex w-full max-w-xs flex-col overflow-hidden rounded-lg border border-gray-100 bg-white shadow-md" key={item.id}>
               <Link className="relative  justify-center h-52 overflow-hidden" to={`/products/${item.id}`}>
                 <img className="contain" src={item.thumbnail} alt="product image" />
@@ -94,7 +78,8 @@ const Home = () => {
                   Add to cart</button>
               </div>
             </div>
-        ))}
+            </>)
+})}
       </div>
       </Suspense>
     </>

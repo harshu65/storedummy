@@ -30,7 +30,7 @@ const Relatedpro = () => {
           <img
             src={d.thumbnail}
             alt={d.title}
-            className="h-full w-full object-cover object-center lg:h-full lg:w-full"
+            className=" h-48 sm:h-52 w-full object-cover object-center lg:h-full lg:w-full"
           />
         </div>
         <div className="mt-4 flex justify-between text-md ptitle">
