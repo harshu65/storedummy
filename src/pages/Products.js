@@ -68,9 +68,7 @@ export const Products = () => {
                   <span className="absolute top-0 right-0 m-2 rounded-full bg-black px-2 text-center text-sm font-medium text-white">{item.discountPercentage}% OFF</span>
                 </Link>
                 <div className="mt-4 px-5 pb-2">
-                  <Link to={`/products/${item.id}`}>
                     <h5 className=" text-xl heading ptitle text-left tracking-tight text-slate-900">{item.title} </h5>
-                  </Link>
 
                   <div className="mt-2 mb-5 flex ">
                     <p>
