@@ -10,9 +10,15 @@ console.log(Globalstate);
 console.log(Globalstate.state.length);
 
 function mobnav(){
-  var element = document.getElementById("mobid");
-  element.classList.remove("hidden");
-  element.classList.add("block");
+  var x = document.getElementById("mobid");
+  // element.classList.remove("hidden");
+  // element.classList.add("block");
+
+  if (x.style.display === "block") {
+    x.style.display = "none";
+  } else {
+    x.style.display = "block";
+  }
 }
   return (
     
@@ -30,14 +36,13 @@ function mobnav(){
             </Link>
           </div>
         </div>
-        <span onClick={()=>mobnav()} className='float-right hidden'><i className="fa fa-bars" aria-hidden="true"></i></span>
+        <span onClick={()=>mobnav()} className='float-right  sm:hidden'><i className="fa fa-bars" aria-hidden="true"></i></span>
       </nav>
-      <div id="mobid"className='mobnav hidden text-indigo-500'>
-          <Link to="/" className='block'>Home</Link>
-          <Link to="/Products" className='block'>Shop All</Link>
-          <Link to="/About" className='block'>About</Link>
-          <Link to="/Contact" className='block'>Contact</Link>
-          
+      <div id="mobid" className='mobnav hidden text-indigo-500'>
+          <Link to="/" >Home</Link>
+          <Link to="/Products" >Shop All</Link>
+          <Link to="/About" >About</Link>
+          <Link to="/Contact">Contact</Link>
         </div>
     </>
   )
