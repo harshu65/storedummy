@@ -15,17 +15,24 @@ const Header = () => {
       x.style.display = "none";
     } else {
       x.style.display = "block";
-    }
+    } 
   }
+  function closemob (){
+    var x = document.getElementById("mobid");
+    x.style.display = "none";
+  }
+//navigation links array
+  const navlinks=[
+    {label:"Home",link:"/"},{label:"Shop All",link:"/Products"},{label:"About",link:"/About"},{label:"Contact",link:"/Contact"},
+  ]
   return (
     <>
       <nav className='sticky top-0 px-4 pb-9 sm:pb-2 text-lg header  text-indigo-500 py-2 heading  justify-between bg-black z-10'>
         <Link to="/" className='float-left text-2xl'>DummyStore</Link>
         <div className='navb md:space-x-16 sm:space-x-8 hidden sm:block '>
-          <Link to="/">Home</Link>
-          <Link to="/Products">Shop All</Link>
-          <Link to="/About">About</Link>
-          <Link to="/Contact">Contact</Link>
+          {navlinks.map((d,i)=>(
+          <Link key={i} to={d.link}>{d.label}</Link>
+        ))}
           <div className='float-right '>
             <Link to="/Cart" className='text-xl'><i className="fa fa-shopping-cart" aria-hidden="true"></i>{Globalstate.state.length}
             </Link>
@@ -33,12 +40,14 @@ const Header = () => {
         </div>
         <span onClick={() => mobnav()} className='float-right  sm:hidden'><i className="fa fa-bars" aria-hidden="true"></i></span>
       </nav>
-      <div id="mobid" className='mobnav hidden text-indigo-500'>
-        <Link to="/" >Home</Link>
-        <Link to="/Products" >Shop All</Link>
-        <Link to="/About" >About</Link>
-        <Link to="/Contact">Contact</Link>
-        <Link to="/Cart">Cart</Link>
+      {/* mobile nav */}
+      <div id="mobid" onClick={()=>closemob()} className='fixed z-10 h-full w-screen hidden bg-black/20 backdrop-blur-sm top-50 right-0'>
+        <section className='text-indigo-500 bg-black flex-col absolute left-0 top-0 h-screen p-2 ps-0 gap-4 z-50 w-56 flex'>
+        {navlinks.map((d,i)=>(
+          <Link className='mobl text-lg' onClick={()=>closemob()}key={i} to={d.link}>{d.label}</Link>
+        ))}
+        <Link to="/Cart" className='text-lg' onClick={()=>closemob()}>Cart</Link>
+        </section>
       </div>
     </>
   )

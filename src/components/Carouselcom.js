@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 const Carouselcom = (props) => {
   return (
     <>
-    <Carousel>
+    <Carousel className='mb-4'>
     {props.dp.map((d)=>(
       <div key={d.id}>
         <img src={d.thumbnail} className='' alt={d.title}/>

@@ -37,7 +37,7 @@ const Home = () => {
               <>
                 <div className="relative  flex w-full max-w-xs flex-col overflow-hidden rounded-lg border border-gray-100 bg-white shadow-md" key={item.id}>
                   <Link className="relative  justify-center h-52 overflow-hidden" to={`/products/${item.id}`}>
-                    <img className="contain" src={item.thumbnail} alt="product image" />
+                    <img className="contain" src={item.thumbnail} alt={item.title} />
                     <span className="absolute top-0 right-0 m-2 rounded-full bg-black px-2 text-center text-sm font-medium text-white">{item.discountPercentage}% OFF</span>
                   </Link>
                   <div className="mt-4 px-5 pb-2">

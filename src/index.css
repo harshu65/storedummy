@@ -24,7 +24,6 @@ code {
 #mobid a {
   display: flex;
   padding: 0rem 1rem;
-  border-left: 0.04rem solid white;
   margin-bottom: 0.1rem;
 }
 
@@ -56,7 +55,7 @@ code {
   border-radius: 0 3px 3px 0;
   user-select: none;
 }
-
+#root > div > div.carousel-root > div:nth-child(2) > div{display: none;}
 /* .carousel .control-next.control-arrow:nth-child(2) {display: none;} */
 /* Position the "next button" to the right */
 .next {
@@ -270,9 +269,7 @@ code {
   display: none;
 }
 
-main.grow {
-  padding: 0rem 12rem;
-}
+
 
 /*404 page*/
 .page_404 {

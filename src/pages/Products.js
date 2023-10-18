@@ -26,18 +26,6 @@ export const Products = () => {
   // console.log(Globalstate);
   console.log(Globalstate.state.length);
 
-   
-      // let [title, setTitle] = useState("Add to Cart");
-      // function btnhandle (){
-      //   setTitle('New text');
-    
-      //  }
-   
-   
-  //distinct category 
-  // const catt = [...new Set(data.map(q => q.category+' '))];
-  // console.log("cat",catt)
-
   let catt=["smartphones","laptops","fragrances","skincare","groceries","furniture","tops","sunglasses","automotive","motorcycle","lighting","womens-dresses","womens-shoes","mens-shirts","mens-shoes","mens-watches","womens-watches","womens-bags","womens-jewellery","home-decoration"];
   const [currentPage, setCurrentPage] = useState(1);
   const recordsPerPage = 8;
@@ -47,6 +35,17 @@ export const Products = () => {
   const npage = Math.ceil(data.length / recordsPerPage)
 
   const numbers = [...Array(npage + 1).keys()].slice(1)
+
+  // const filterByCategory = category => {
+  //   setData(
+  //     data.filter(d => {
+  //       return d.category === category
+  //     })
+  //   )
+  // }
+  // const Categories = Array.from(
+  //   new Set(data.map(data => data.category))
+  // )
   return (
     <>
       <h2 className='my-4  mt-12 capitalize text-center  text-slate-300
@@ -54,15 +53,16 @@ export const Products = () => {
       <div className="catscroll text-white  overflow-scroll flex-nowrap md:space-x-4 sm:space-x-4 hidden sm:flex pt-4 my-8 mx-8 ">
         {catt.map((d, i) =>
           <Link to={`/products/category/${d}`} className='catbtn px-6 py-1  capitalize border rounded-full
-        hover:bg-indigo-600 self-baseline'>{d}</Link>
+        hover:bg-indigo-600 self-baseline' key={i}>{d}</Link>
         )}
       </div>
       <div className='grid lg:grid-cols-4 sm:grid-cols-3 grid-cols-2 justify-items-center gap-4 mx-5 '>
+         
         {records.map((item, index) => {
           item.quantity = 1;
           return (
             <>
-              <div className="relative  flex w-full max-w-xs flex-col overflow-hidden rounded-lg border border-gray-100 bg-white shadow-md" key={item.id}>
+              <div className="relative  flex w-full max-w-xs flex-col overflow-hidden rounded-lg border border-gray-100 bg-white shadow-md" key={index}>
                 <Link className="relative flex h-52 overflow-hidden justify-center" to={`/products/${item.id}`}>
                   <img className="contain" src={item.thumbnail} alt={item.title} />
                   <span className="absolute top-0 right-0 m-2 rounded-full bg-black px-2 text-center text-sm font-medium text-white">{item.discountPercentage}% OFF</span>
@@ -111,15 +111,15 @@ export const Products = () => {
 
       <nav className='text-white py-8'>
         <ul className='pagination inline-flex'>
-          <li className='page-item px-6 '>
+          <li className='page-item px-2 sm:px-6 '>
             <button className='page-link hover:text-black hover:bg-indigo-500 shadow-lg shadow-indigo-500/50 border-0 rounded-full px-4 ' onClick={prePage}>Prev</button>
           </li>
           {numbers.map((n, i) => (
             <li className={`page-item hover:bg-white hover:text-black border-1 rounded-full px-4 ${currentPage === n ? `active` : ''}`} key={i}>
-              <button className='page-link' onClick={() => changeCPage(n)}>{n}</button>
+              <button className='page-link flex' onClick={() => changeCPage(n)}>{n}</button>
             </li>
           ))}
-          <li className='page-item px-6'>
+          <li className='page-item px-2 sm:px-6'>
             <button className='page-link hover:text-black hover:bg-indigo-500 shadow-lg shadow-indigo-500/50 border-0 rounded-full px-4' onClick={nextPage}>Next</button>
           </li>
         </ul>
